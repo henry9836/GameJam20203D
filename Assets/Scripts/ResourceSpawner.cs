@@ -50,6 +50,8 @@ public class ResourceSpawner : MonoBehaviour
                 //Spawn within my area
                 Vector3 spawnPos = new Vector3(transform.position.x + Random.Range(-spawnRadius, spawnRadius), transform.position.y, transform.position.z + Random.Range(-spawnRadius, spawnRadius));
 
+                RaycastHit hit;
+
                 //Don't spawn inside another obj
                 while (true)
                 {
@@ -59,10 +61,14 @@ public class ResourceSpawner : MonoBehaviour
                         Debug.LogWarning("Could not spawn object at position since obsctcle retrying...");
                         spawnPos = new Vector3(transform.position.x + Random.Range(-spawnRadius, spawnRadius), transform.position.y, transform.position.z + Random.Range(-spawnRadius, spawnRadius));
                     }
-                    //Floating Ignore
+                    //If not touching other objects but can raycast ground then spawn
+                    else if (Physics.Raycast(spawnPos + Vector3.up, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, groundLayer))
+                    {
+                        break;
+                    }
                     else
                     {
-                        
+                        spawnPos = new Vector3(transform.position.x + Random.Range(-spawnRadius, spawnRadius), transform.position.y, transform.position.z + Random.Range(-spawnRadius, spawnRadius));
                     }
                     yield return null;
                 }
