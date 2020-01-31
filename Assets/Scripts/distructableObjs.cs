@@ -9,8 +9,6 @@ public class distructableObjs : MonoBehaviour
     public Material fullHealthState;
     public Material damagedHealthState;
     public Material destroyedHealthState;
-    public Material buildPreviewBad;
-    public Material buildPreview;
     public bool matOverrideFlag;
     public Material overrideMaterial;
 
