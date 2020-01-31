@@ -6,7 +6,7 @@ public class Gun : MonoBehaviour
 {
     void Update()
     {
-        if (Input.GetKeyDown("Fire1") == true)
+        if (Input.GetButton("Fire1") == true)
         {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
@@ -14,10 +14,11 @@ public class Gun : MonoBehaviour
                 if (hit.transform.gameObject.tag == "meteor")
                 {
                     Debug.Log("shot meteor");
+                    hit.transform.gameObject.GetComponent<meteor>().isshot();
                 }
                 else if (hit.transform.gameObject.tag == "mineable")
-                {
-                    Debug.Log("mineing away, in this minecraft day SO BUTIFUL");
+                { 
+                    this.GetComponentInParent<Inventory>().UpdateInv(hit.transform.GetComponent<mineable>().selected, 1);
                 }
             }
         }

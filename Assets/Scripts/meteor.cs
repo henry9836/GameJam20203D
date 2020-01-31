@@ -13,13 +13,15 @@ public class meteor : MonoBehaviour
     public bool DeathIsInevitable = false;
     public bool isSubDivide = false;
     public GameObject meteorobj;
-
+    public float hitspred = 0.9f;
 
     void Start()
     {
+        Debug.Log("hi");
         StartCoroutine(grow());
         initsize = Random.Range(2.0f, 4.0f);
         player = GameObject.FindGameObjectWithTag("Player");
+        gameObject.transform.LookAt(player.transform.position);
     }
 
     void Update()
@@ -30,24 +32,40 @@ public class meteor : MonoBehaviour
 
     public void isshot()
     {
-        GameObject meteorobj1 = Instantiate(meteorobj, transform.position, transform.rotation);
-        meteorobj1.gameObject.GetComponent<meteor>().isSubDivide = true;
-        meteorobj1.gameObject.GetComponent<meteor>().size = size * 0.5f;
+        GetComponent<SphereCollider>().enabled = false;
+        GetComponent<MeshRenderer>().enabled = false;
+        Destroy(GetComponent<Rigidbody>());
 
+        GameObject meteorobj1 = Instantiate(meteorobj, transform.position, transform.rotation);
+        meteorobj1.GetComponent<meteor>().isSubDivide = true;
+        meteorobj1.GetComponent<meteor>().size = size * 0.65f;
+        meteorobj1.GetComponent<SphereCollider>().enabled = true;
+        meteorobj1.GetComponent<MeshRenderer>().enabled = true;
+
+        GameObject meteorobj2 = Instantiate(meteorobj, transform.position, transform.rotation);
+        meteorobj2.GetComponent<meteor>().isSubDivide = true;
+        meteorobj2.GetComponent<meteor>().size = size * 0.65f;
+        meteorobj2.GetComponent<SphereCollider>().enabled = true;
+        meteorobj2.GetComponent<MeshRenderer>().enabled = true;
+
+        Destroy(this.gameObject);
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if (DeathIsInevitable == false)
         {
-            DeathIsInevitable = true;
-            RaycastHit[] hits = Physics.SphereCastAll(transform.position, size + additionalexplosionraduis, transform.forward, 1.0f, distructable);
-            foreach (var hit in hits)
+            if (collision.gameObject.tag != gameObject.tag)
             {
-                Debug.Log(hit.transform.gameObject.name);
-                hit.transform.gameObject.GetComponent<distructableObjs>().HP -= size * 25.0f;
+                DeathIsInevitable = true;
+                RaycastHit[] hits = Physics.SphereCastAll(transform.position, size + additionalexplosionraduis, transform.forward, 1.0f, distructable);
+                foreach (var hit in hits)
+                {
+                    Debug.Log(hit.transform.gameObject.name);
+                    hit.transform.gameObject.GetComponent<distructableObjs>().HP -= size * 25.0f;
+                }
+                Destroy(this.gameObject);
             }
-            Destroy(this.gameObject);
         }
     }
 
@@ -63,15 +81,18 @@ public class meteor : MonoBehaviour
             }
 
             Vector3 dir = -(this.transform.position - player.transform.position).normalized;
-            Debug.Log(dir * speed);
             this.gameObject.GetComponent<Rigidbody>().AddForce(dir * speed, ForceMode.Impulse);
 
         }
         else 
         {
-            Vector3 dir = -(this.transform.position - player.transform.position).normalized;
-            Debug.Log(dir * speed);
-            this.gameObject.GetComponent<Rigidbody>().AddForce(dir * speed, ForceMode.Impulse);
+            this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            float yrand = Random.Range(hitspred, -hitspred);
+            float xrand = Random.Range(Mathf.Sqrt(Mathf.Pow(hitspred, 2) - Mathf.Pow(yrand, 2)), -Mathf.Sqrt(Mathf.Pow(hitspred, 2) - Mathf.Pow(yrand, 2)));
+            Vector3 vec3dir = new Vector3(xrand, yrand, 1);
+            this.gameObject.GetComponent<Rigidbody>().AddForce(-vec3dir * speed, ForceMode.Impulse);
+
+
         }
     }
 }
