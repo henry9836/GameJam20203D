@@ -33,6 +33,7 @@ public class Gun : MonoBehaviour
                     else
                     {
                         this.GetComponentInParent<Inventory>().UpdateInv(hit.transform.GetComponent<mineable>().selected, 1);
+                        Destroy(hit.transform.gameObject);
                     }
                 }
             }
