@@ -25,7 +25,15 @@ public class GameOverEvent : MonoBehaviour
 
         ScreenCapture.CaptureScreenshot("gameoverscreen.png");
 
-        string path = Directory.GetCurrentDirectory() + "\\Meteor Storm_Data\\";
+        string path = "";
+
+        #if UNITY_STANDALONE_LINUX
+            path = Directory.GetCurrentDirectory() + "/run_Data/";
+        #endif
+
+        #if UNITY_STANDALONE_WIN
+            path = Directory.GetCurrentDirectory() + "\\Meteor Storm_Data\\";
+        #endif
         string fullFilename = pathPrefix + path + filename;
 
         Debug.LogError(fullFilename);
