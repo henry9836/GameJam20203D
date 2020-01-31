@@ -11,19 +11,29 @@ public class meteor : MonoBehaviour
     public float speed = 1.0f;
     public GameObject player;
     public bool DeathIsInevitable = false;
+    public bool isSubDivide = false;
+    public GameObject meteorobj;
 
-    
 
     void Start()
     {
         StartCoroutine(grow());
         initsize = Random.Range(2.0f, 4.0f);
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
     {
         this.transform.localScale = new Vector3(size, size, size);
-        this.gameObject.GetComponent<Rigidbody>().mass = ((4.0f / 3.0f) * Mathf.PI * Mathf.Pow(size, 3.0f));
+        this.gameObject.GetComponent<Rigidbody>().mass = 150.0f;
+    }
+
+    public void isshot()
+    {
+        GameObject meteorobj1 = Instantiate(meteorobj, transform.position, transform.rotation);
+        meteorobj1.gameObject.GetComponent<meteor>().isSubDivide = true;
+        meteorobj1.gameObject.GetComponent<meteor>().size = size * 0.5f;
+
     }
 
     void OnCollisionEnter(Collision collision)
@@ -42,17 +52,26 @@ public class meteor : MonoBehaviour
     }
 
 
-
     public IEnumerator grow()
     {
-        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime * 1.0f)
+        if (isSubDivide == false)
         {
-            size = Mathf.Lerp(0.0f, initsize , t);
-            yield return null;
-        }
-        Vector3 dir = -(this.transform.position - player.transform.position).normalized;
-        Debug.Log(dir * speed);
-        this.gameObject.GetComponent<Rigidbody>().AddForce(dir * speed , ForceMode.Impulse);
-    }
+            for (float t = 0.0f; t < 1.0f; t += Time.deltaTime * 1.0f)
+            {
+                size = Mathf.Lerp(0.0f, initsize, t);
+                yield return null;
+            }
 
+            Vector3 dir = -(this.transform.position - player.transform.position).normalized;
+            Debug.Log(dir * speed);
+            this.gameObject.GetComponent<Rigidbody>().AddForce(dir * speed, ForceMode.Impulse);
+
+        }
+        else 
+        {
+            Vector3 dir = -(this.transform.position - player.transform.position).normalized;
+            Debug.Log(dir * speed);
+            this.gameObject.GetComponent<Rigidbody>().AddForce(dir * speed, ForceMode.Impulse);
+        }
+    }
 }
