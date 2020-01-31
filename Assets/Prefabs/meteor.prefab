@@ -118,7 +118,8 @@ MonoBehaviour:
   DeathIsInevitable: 0
   isSubDivide: 0
   meteorobj: {fileID: 1220209256971398747}
-  hitspred: 0.3
+  hitspred: 0.4
+  HP: 100
 --- !u!54 &1220209256971398721
 Rigidbody:
   m_ObjectHideFlags: 0
