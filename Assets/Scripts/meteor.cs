@@ -16,6 +16,9 @@ public class meteor : MonoBehaviour
     {
         StartCoroutine(grow());
         initsize = Random.Range(2.0f, 4.0f);
+
+        player = GameObject.FindGameObjectWithTag("Player");
+
     }
 
     void Update()
