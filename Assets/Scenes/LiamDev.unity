@@ -1037,7 +1037,7 @@ GameObject:
   - component: {fileID: 1592700805}
   - component: {fileID: 1592700804}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: PlayerTemp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1111,7 +1111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1592700803}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.5, z: -15}
+  m_LocalPosition: {x: 0, y: 4.5, z: -25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1485,6 +1485,8 @@ MonoBehaviour:
   startButton: {fileID: 220555569}
   quitButton: {fileID: 44439813}
   selectPointer: {fileID: 1985618437}
+  playerPosition: {fileID: 1592700807}
+  cameraPosition: {fileID: 358454183}
 --- !u!1 &1985618436
 GameObject:
   m_ObjectHideFlags: 0

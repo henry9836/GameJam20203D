@@ -13,6 +13,7 @@ public class MainMenuUI : MonoBehaviour
     public Transform cameraPosition;
 
     private Image selected;
+    private bool starting;
 
     // Start is called before the first frame update
     void Start()
@@ -24,20 +25,23 @@ public class MainMenuUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.S))
+        if(!starting)
         {
-            selected = quitButton;
-            PointerPosition();
-        }
-        else if(Input.GetKeyDown(KeyCode.W))
-        {
-            selected = startButton;
-            PointerPosition();
-        }
+            if(Input.GetKeyDown(KeyCode.S))
+            {
+                selected = quitButton;
+                PointerPosition();
+            }
+            else if(Input.GetKeyDown(KeyCode.W))
+            {
+                selected = startButton;
+                PointerPosition();
+            }
 
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            selected.GetComponent<MenuButtonUI>().OnClick();
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                selected.GetComponent<MenuButtonUI>().OnClick();
+            }
         }
 
     }
@@ -50,9 +54,10 @@ public class MainMenuUI : MonoBehaviour
 
     public void StartGame()
     {
-        //Start the game
         Debug.Log("Start Game");
-        Destroy(gameObject);
+        starting = true;
+        StartCoroutine(MoveCamera());
+        //Destroy(gameObject);
     }
 
     public void PointerPosition()
@@ -62,12 +67,17 @@ public class MainMenuUI : MonoBehaviour
 
     public IEnumerator MoveCamera()
     {
-        for(float t = 0.0f; t < 1.0f; t += Time.deltaTime * 1.0f)
-        {
-            //Move the camera
+        Vector3 startPos = cameraPosition.position;
 
-            yield return null;
+        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime * 0.75f)
+        {
+           cameraPosition.position = Vector3.Lerp(startPos, playerPosition.position, t);
+           yield return null;
         }
+
+        Destroy(gameObject);
+
     }
+
 
 }
