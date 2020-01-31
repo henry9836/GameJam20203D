@@ -15,6 +15,7 @@ public class distructableObjs : MonoBehaviour
     private MeshRenderer meshRenderer;
     private BoxCollider boxCol;
     public bool amDead = false;
+    public bool isTV = false;
     private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
@@ -69,6 +70,12 @@ public class distructableObjs : MonoBehaviour
             }
 
             amDead = true;
+        }
+
+        //TV DED
+        if (amDead && isTV)
+        {
+            Destroy(gameObject);
         }
     }
 }
