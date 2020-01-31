@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2322193015724414897}
   - component: {fileID: 2322193015724414908}
   - component: {fileID: 2322193015724414909}
-  - component: {fileID: 1172986570285772353}
+  - component: {fileID: 577886379322374368}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -118,6 +118,15 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 512
+  groundLayer1:
+    serializedVersion: 2
+    m_Bits: 1024
+  groundLayer2:
+    serializedVersion: 2
+    m_Bits: 0
+  groundLayer3:
+    serializedVersion: 2
+    m_Bits: 0
   feet: {fileID: 963258785716453387}
   feetRadius: 0.6
 --- !u!54 &2322193015724414909
@@ -130,13 +139,13 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 100
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &1172986570285772353
+--- !u!114 &577886379322374368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,6 +171,7 @@ GameObject:
   - component: {fileID: 2322193016754712045}
   - component: {fileID: 2322193016754712034}
   - component: {fileID: 2322193016754712046}
+  - component: {fileID: 1016517881414719283}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -354,6 +364,23 @@ MonoBehaviour:
   mouseX: 0
   mouseY: 0
   body: {fileID: 0}
+--- !u!114 &1016517881414719283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2322193016754712035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8869d81e49a8a74f8736fa95e3a24f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  costForPlank: 1
+  costForTile: 1
+  buildLayer:
+    serializedVersion: 2
+    m_Bits: 4096
 --- !u!1 &6656225553263035964
 GameObject:
   m_ObjectHideFlags: 0
