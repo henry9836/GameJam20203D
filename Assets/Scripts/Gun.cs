@@ -13,12 +13,27 @@ public class Gun : MonoBehaviour
             {
                 if (hit.transform.gameObject.tag == "meteor")
                 {
-                    Debug.Log("shot meteor");
-                    hit.transform.gameObject.GetComponent<meteor>().isshot();
+                    if (hit.transform.gameObject.GetComponent<meteor>().HP > 0.0f)
+                    {
+                        hit.transform.gameObject.GetComponent<meteor>().HP -= 250.0f * Time.deltaTime;
+                        Debug.Log(hit.transform.gameObject.GetComponent<meteor>().HP);
+                    }
+                    else 
+                    {
+                        hit.transform.gameObject.GetComponent<meteor>().isshot();
+                    }
                 }
                 else if (hit.transform.gameObject.tag == "mineable")
-                { 
-                    this.GetComponentInParent<Inventory>().UpdateInv(hit.transform.GetComponent<mineable>().selected, 1);
+                {
+                    if (hit.transform.gameObject.GetComponent<mineable>().HP > 0.0f)
+                    {
+                        hit.transform.gameObject.GetComponent<mineable>().HP -= 200.0f * Time.deltaTime;
+                        Debug.Log(hit.transform.gameObject.GetComponent<mineable>().HP);
+                    }
+                    else
+                    {
+                        this.GetComponentInParent<Inventory>().UpdateInv(hit.transform.GetComponent<mineable>().selected, 1);
+                    }
                 }
             }
         }
