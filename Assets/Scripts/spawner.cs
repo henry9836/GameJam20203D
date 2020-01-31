@@ -9,10 +9,6 @@ public class spawner : MonoBehaviour
     public float timer = 0.0f;
     public float delay = 2.0f;
 
-    void Start()
-    {
-        
-    }
 
     void Update()
     {

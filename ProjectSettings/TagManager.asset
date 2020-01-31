@@ -9,6 +9,8 @@ TagManager:
   - Tile
   - PlankBuild
   - TileBuild
+  - meteor
+  - mineable
   layers:
   - Default
   - TransparentFX
