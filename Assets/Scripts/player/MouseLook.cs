@@ -14,6 +14,12 @@ public class MouseLook : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+
+        if (body == null)
+        {
+            body = transform.parent;
+        }
+
     }
 
     void Update()
