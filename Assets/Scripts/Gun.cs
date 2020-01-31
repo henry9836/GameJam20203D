@@ -13,6 +13,10 @@ public class Gun : MonoBehaviour
         if (Input.GetButton("Fire1") == true)
         {
             gunTip.GetComponent<LineRenderer>().enabled = true;
+            if (!gunTip.GetComponent<AudioSource>().isPlaying)
+            {
+                gunTip.GetComponent<AudioSource>().Play();
+            }
             RaycastHit hit;
             //If we hit something
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
@@ -59,6 +63,7 @@ public class Gun : MonoBehaviour
         else
         {
             gunTip.GetComponent<LineRenderer>().enabled = false;
+            gunTip.GetComponent<AudioSource>().Stop();
         }
     }
 }
