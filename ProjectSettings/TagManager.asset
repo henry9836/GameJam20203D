@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Plank
+  - GameManager
+  - Tile
+  - PlankBuild
+  - TileBuild
+  - meteor
+  - mineable
   layers:
   - Default
   - TransparentFX
@@ -14,10 +21,10 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - ground
+  - Ground
   - Distructable
-  - 
-  - 
+  - spawner
+  - buildLayer
   - 
   - 
   - 
