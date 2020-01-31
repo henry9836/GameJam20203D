@@ -59,9 +59,10 @@ public class ResourceSpawner : MonoBehaviour
                         Debug.LogWarning("Could not spawn object at position since obsctcle retrying...");
                         spawnPos = new Vector3(transform.position.x + Random.Range(-spawnRadius, spawnRadius), transform.position.y, transform.position.z + Random.Range(-spawnRadius, spawnRadius));
                     }
+                    //Floating Ignore
                     else
                     {
-                        break;
+                        
                     }
                     yield return null;
                 }

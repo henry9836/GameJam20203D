@@ -16,6 +16,7 @@ public class meteor : MonoBehaviour
     public float hitspred = 0.9f;
     public float deathDealy = 0.5f;
     public GameObject particlePrefab;
+    public Vector2 StartSizeRange = new Vector2(6.0f, 10.0f);
     private float lifetime = 30.0f;
 
     public float HP = 100.0f;
@@ -24,7 +25,7 @@ public class meteor : MonoBehaviour
     {
         Debug.Log("hi");
         StartCoroutine(grow());
-        initsize = Random.Range(6.0f, 10.0f);
+        initsize = Random.Range(StartSizeRange.x, StartSizeRange.y);
         player = GameObject.FindGameObjectWithTag("Player");
         gameObject.transform.LookAt(player.transform.position);
     }
@@ -79,7 +80,7 @@ public class meteor : MonoBehaviour
                 foreach (var hit in hits)
                 {
                     Debug.Log(hit.transform.gameObject.name);
-                    hit.transform.gameObject.GetComponent<distructableObjs>().HP -= size * 25.0f;
+                    hit.transform.gameObject.GetComponent<distructableObjs>().HP -= size * 5.0f;
                 }
                 StartCoroutine(despawn());
             }
@@ -91,7 +92,7 @@ public class meteor : MonoBehaviour
     {
         if (isSubDivide == false)
         {
-            for (float t = 0.0f; t < 1.0f; t += Time.deltaTime * 1.0f)
+            for (float t = 0.0f; t < 1.0f; t += Time.deltaTime * 0.3f)
             {
                 size = Mathf.Lerp(0.0f, initsize, t);
                 yield return null;
