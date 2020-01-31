@@ -10,13 +10,55 @@ public class RepairMechanic : MonoBehaviour
     public LayerMask buildLayer;
 
     private RaycastHit hit;
+    private float buildDistance = 0;
+    private Inventory inv;
+
+    private void Start()
+    {
+        buildDistance = GameObject.FindGameObjectWithTag("GameManager").GetComponent<BuildVisual>().distanceThreshold;
+        inv = transform.parent.GetComponent<Inventory>();
+    }
 
     private void Update()
     {
         if (Input.GetButtonDown("Fire2"))
         {
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, buildLayer))
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, buildDistance, buildLayer))
             {
+                //Check for damage so we don't fix anything that isn't visually hurt
+                if (hit.collider.gameObject.transform.parent.GetComponent<distructableObjs>().HP <= hit.collider.transform.parent.gameObject.GetComponent<distructableObjs>().damagedHealthStateThreshold)
+                {
+
+                    //Fix thing
+                    //Wood
+                    if (hit.collider.tag == "PlankBuild")
+                    {
+                        //Try and use inventory
+                        if (inv.UpdateInv(Inventory.ITEM.WOOD, -costForPlank))
+                        {
+                            //Fix Plank
+                            hit.collider.gameObject.transform.parent.GetComponent<distructableObjs>().HP = 100.0f;
+                        }
+                        else
+                        {
+                            Debug.LogWarning("An Error Occured Updating Inv");
+                        }
+                    }
+                    //Stone
+                    else if (hit.collider.tag == "TileBuild")
+                    {
+                        //Try and use inventory
+                        if (inv.UpdateInv(Inventory.ITEM.STONE, -costForTile))
+                        {
+                            //Fix Plank
+                            hit.collider.gameObject.transform.parent.GetComponent<distructableObjs>().HP = 100.0f;
+                        }
+                        else
+                        {
+                            Debug.LogWarning("An Error Occured Updating Inv");
+                        }
+                    }
+                }
 
             }
         }

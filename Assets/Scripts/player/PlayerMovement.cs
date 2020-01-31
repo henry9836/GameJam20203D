@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Vector3 moveDir = Vector3.zero;
 
@@ -72,8 +72,10 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetButtonDown("Jump"))
             {
                 Debug.Log("Jump");
-
-                rb.AddForce(transform.up * jumpForce * Time.deltaTime);
+                if (rb.velocity.y < 1.0f)
+                {
+                    rb.AddForce(transform.up * jumpForce * Time.deltaTime);
+                }
             }
 
         }

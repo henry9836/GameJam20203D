@@ -12,6 +12,7 @@ public class BuildVisual : MonoBehaviour
     private GameObject[] tiles;
     private List<GameObject> repairableObjs = new List<GameObject>();
     private GameObject player;
+    private GameObject cam;
 
     private void Start()
     {
@@ -29,51 +30,63 @@ public class BuildVisual : MonoBehaviour
         }
 
         player = GameObject.FindGameObjectWithTag("Player");
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
+
+        StartCoroutine(VisualLoop());
+
     }
 
-    private void Update()
+    IEnumerator VisualLoop()
     {
-        //Change visual of planks when damaged and nearby
-        for (int i = 0; i < repairableObjs.Count; i++)
+        while (true)
         {
-            //Check distance
-            Debug.Log(Vector3.Distance(repairableObjs[i].transform.position, player.transform.position));
-
-            if (Vector3.Distance(repairableObjs[i].transform.position, player.transform.position) < distanceThreshold)
+            //Change visual of planks when damaged and nearby
+            for (int i = 0; i < repairableObjs.Count; i++)
             {
-                //Check damage
-                if (repairableObjs[i].GetComponent<distructableObjs>().amDead)
+                //Check distance
+
+                if (Vector3.Distance(repairableObjs[i].transform.position, player.transform.position) < distanceThreshold)
                 {
-                    //Override Mat
-                    repairableObjs[i].GetComponent<distructableObjs>().matOverrideFlag = true;
-
-                    bool canBuild = false;
-
-                    if (repairableObjs[i].tag == "Plank")
+                    //Check damage
+                    if (repairableObjs[i].GetComponent<distructableObjs>().amDead)
                     {
-                        canBuild = (player.GetComponent<Inventory>().inventory[Inventory.ITEM.WOOD] >= player.GetComponent<RepairMechanic>().costForPlank);
+                        //Override Mat
+                        repairableObjs[i].GetComponent<distructableObjs>().matOverrideFlag = true;
+
+                        bool canBuild = false;
+
+                        if (repairableObjs[i].tag == "Plank")
+                        {
+                            canBuild = (player.GetComponent<Inventory>().inventory[Inventory.ITEM.WOOD] >= cam.GetComponent<RepairMechanic>().costForPlank);
+                        }
+                        else if (repairableObjs[i].tag == "Tile")
+                        {
+                            canBuild = (player.GetComponent<Inventory>().inventory[Inventory.ITEM.STONE] >= cam.GetComponent<RepairMechanic>().costForTile);
+                        }
+
+                        //Override Mat According To Inv
+                        if (canBuild)
+                        {
+                            repairableObjs[i].GetComponent<distructableObjs>().overrideMaterial = canBuildPreview;
+                        }
+                        else
+                        {
+                            repairableObjs[i].GetComponent<distructableObjs>().overrideMaterial = cannotBuildPreview;
+                        }
                     }
                     else
                     {
-                        canBuild = (player.GetComponent<Inventory>().inventory[Inventory.ITEM.STONE] >= player.GetComponent<RepairMechanic>().costForTile);
-                    }
-
-                    //Override Mat According To Inv
-                    if (canBuild)
-                    {
-                        repairableObjs[i].GetComponent<distructableObjs>().overrideMaterial = canBuildPreview;
-                    }
-                    else
-                    {
-                        repairableObjs[i].GetComponent<distructableObjs>().overrideMaterial = cannotBuildPreview;
+                        //Disable anyoverride
+                        repairableObjs[i].GetComponent<distructableObjs>().matOverrideFlag = false;
                     }
                 }
+                else
+                {
+                    //Disable anyoverride
+                    repairableObjs[i].GetComponent<distructableObjs>().matOverrideFlag = false;
+                }
             }
-            else
-            {
-                //Disable anyoverride
-                planks[i].GetComponent<distructableObjs>().matOverrideFlag = false;
-            }
+            yield return null;
         }
     }
 

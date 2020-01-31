@@ -116,6 +116,10 @@ MonoBehaviour:
   speed: 5000
   player: {fileID: 2322193015724414902, guid: 70068b2686d986d4dbcfabd8c89f3e1b, type: 3}
   DeathIsInevitable: 0
+  isSubDivide: 0
+  meteorobj: {fileID: 1220209256971398747}
+  hitspred: 0.4
+  HP: 100
 --- !u!54 &1220209256971398721
 Rigidbody:
   m_ObjectHideFlags: 0
