@@ -15,7 +15,7 @@ public class meteor : MonoBehaviour
     public GameObject meteorobj;
     public float hitspred = 0.9f;
     public float deathDealy = 0.5f;
-
+    public GameObject particlePrefab;
     private float lifetime = 30.0f;
 
     public float HP = 100.0f;
@@ -32,7 +32,7 @@ public class meteor : MonoBehaviour
     void Update()
     {
         this.transform.localScale = new Vector3(size, size, size);
-        this.gameObject.GetComponent<Rigidbody>().mass = 100.0f;
+        this.gameObject.GetComponent<Rigidbody>().mass = 500.0f;
 
         lifetime -= Time.deltaTime;
 
@@ -45,7 +45,7 @@ public class meteor : MonoBehaviour
     public void isshot()
     {
 
-        GetComponent<SphereCollider>().enabled = false;
+        GetComponent<MeshCollider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
         Destroy(GetComponent<Rigidbody>());
 
@@ -53,14 +53,14 @@ public class meteor : MonoBehaviour
         meteorobj1.GetComponent<meteor>().isSubDivide = true;
         meteorobj1.GetComponent<meteor>().size = size * 0.45f;
         meteorobj1.GetComponent<meteor>().HP = 100.0f;
-        meteorobj1.GetComponent<SphereCollider>().enabled = true;
+        meteorobj1.GetComponent<MeshCollider>().enabled = true;
         meteorobj1.GetComponent<MeshRenderer>().enabled = true;
 
         GameObject meteorobj2 = Instantiate(meteorobj, transform.position, transform.rotation);
         meteorobj2.GetComponent<meteor>().isSubDivide = true;
         meteorobj2.GetComponent<meteor>().size = size * 0.45f;
         meteorobj2.GetComponent<meteor>().HP = 100.0f;
-        meteorobj2.GetComponent<SphereCollider>().enabled = true;
+        meteorobj2.GetComponent<MeshCollider>().enabled = true;
         meteorobj2.GetComponent<MeshRenderer>().enabled = true;
 
         Destroy(this.gameObject);
@@ -70,6 +70,8 @@ public class meteor : MonoBehaviour
     {
         if (DeathIsInevitable == false)
         {
+            Instantiate(particlePrefab, collision.contacts[0].point, Quaternion.identity);
+
             if (collision.gameObject.tag != gameObject.tag)
             {
                 DeathIsInevitable = true;
