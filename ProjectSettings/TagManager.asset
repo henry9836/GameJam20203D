@@ -15,7 +15,8 @@ TagManager:
   - 
   - PostProcessing
   - Ground
-  - 
+  - Distructable
+  - spawner
   - 
   - 
   - 

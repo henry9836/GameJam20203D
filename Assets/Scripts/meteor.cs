@@ -12,8 +12,6 @@ public class meteor : MonoBehaviour
     public GameObject player;
     public bool DeathIsInevitable = false;
 
-    
-
     void Start()
     {
         StartCoroutine(grow());
@@ -40,7 +38,6 @@ public class meteor : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
 
 
     public IEnumerator grow()
