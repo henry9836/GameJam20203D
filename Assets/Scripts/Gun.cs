@@ -16,9 +16,10 @@ public class Gun : MonoBehaviour
                     Debug.Log("shot meteor");
                     hit.transform.gameObject.GetComponent<meteor>().isshot();
                 }
-                else if (hit.transform.gameObject.tag == "mineable")
+                else if (hit.transform.gameObject.tag == "mineableWood" || hit.transform.gameObject.tag == "mineableStone")
                 { 
                     this.GetComponentInParent<Inventory>().UpdateInv(hit.transform.GetComponent<mineable>().selected, 1);
+                    Destroy(hit.transform.gameObject);
                 }
             }
         }
