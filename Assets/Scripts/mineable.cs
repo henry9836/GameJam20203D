@@ -4,6 +4,5 @@ using UnityEngine;
 
 public class mineable : MonoBehaviour
 {
-   
     public Inventory.ITEM selected;
 }
