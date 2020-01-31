@@ -26,7 +26,7 @@ public class RepairMechanic : MonoBehaviour
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, buildDistance, buildLayer))
             {
                 //Check for damage so we don't fix anything that isn't visually hurt
-                if (hit.collider.gameObject.GetComponent<distructableObjs>().HP <= hit.collider.gameObject.GetComponent<distructableObjs>().damagedHealthStateThreshold)
+                if (hit.collider.gameObject.transform.parent.GetComponent<distructableObjs>().HP <= hit.collider.transform.parent.gameObject.GetComponent<distructableObjs>().damagedHealthStateThreshold)
                 {
 
                     //Fix thing

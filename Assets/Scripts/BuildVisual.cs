@@ -61,11 +61,8 @@ public class BuildVisual : MonoBehaviour
                         }
                         else if (repairableObjs[i].tag == "Tile")
                         {
-                            Debug.Log((player.GetComponent<Inventory>().inventory[Inventory.ITEM.STONE] >= cam.GetComponent<RepairMechanic>().costForTile));
                             canBuild = (player.GetComponent<Inventory>().inventory[Inventory.ITEM.STONE] >= cam.GetComponent<RepairMechanic>().costForTile);
                         }
-
-                        Debug.Log(player.GetComponent<Inventory>().inventory[Inventory.ITEM.WOOD]);
 
                         //Override Mat According To Inv
                         if (canBuild)
