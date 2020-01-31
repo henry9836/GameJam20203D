@@ -15,7 +15,7 @@ public class Inventory : MonoBehaviour
         STONE
     };
 
-    Dictionary<ITEM, int> inventory = new Dictionary<ITEM, int>();
+    public Dictionary<ITEM, int> inventory = new Dictionary<ITEM, int>();
 
     public bool UpdateInv(ITEM item, int amount)
     {
@@ -66,7 +66,7 @@ public class Inventory : MonoBehaviour
 
         //Test inv
         //Debug.Log("Test 1: " + "INV SIZE: " + currentInvSize.ToString() + " STONE: " + inventory[ITEM.STONE].ToString() + " WOOD: " + inventory[ITEM.WOOD]);
-        //UpdateInv(ITEM.WOOD, 3);
+        UpdateInv(ITEM.WOOD, 3);
         //Debug.Log("Test 2: " + "INV SIZE: " + currentInvSize.ToString() + " STONE: " + inventory[ITEM.STONE].ToString() + " WOOD: " + inventory[ITEM.WOOD]);
         //UpdateInv(ITEM.STONE, 1);
         //Debug.Log("Test 3: " + "INV SIZE: " + currentInvSize.ToString() + " STONE: " + inventory[ITEM.STONE].ToString() + " WOOD: " + inventory[ITEM.WOOD]);

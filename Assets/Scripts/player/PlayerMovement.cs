@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     public float slowDownRate = 0.9f;
     public float jumpForce = 10000.0f;
     public LayerMask groundLayer;
+    public LayerMask groundLayer1;
+    public LayerMask groundLayer2;
+    public LayerMask groundLayer3;
     public Transform feet;
     public float feetRadius = 1.0f;
 
@@ -28,6 +31,19 @@ public class PlayerMovement : MonoBehaviour
 
         //Check for ground
         grounded = Physics.CheckSphere(feet.position, feetRadius, groundLayer);
+
+        if (!grounded)
+        {
+            grounded = Physics.CheckSphere(feet.position, feetRadius, groundLayer1);
+        }
+        if (!grounded)
+        {
+            grounded = Physics.CheckSphere(feet.position, feetRadius, groundLayer2);
+        }
+        if (!grounded)
+        {
+            grounded = Physics.CheckSphere(feet.position, feetRadius, groundLayer3);
+        }
 
         //If we are on the ground we can move
         if (grounded)
