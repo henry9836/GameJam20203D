@@ -5,13 +5,5 @@ using UnityEngine;
 public class distructableObjs : MonoBehaviour
 {
     public float HP = 100.0f;
-    void Start()
-    {
-        
-    }
 
-    void Update()
-    {
-        
-    }
 }

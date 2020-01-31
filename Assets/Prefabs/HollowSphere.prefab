@@ -110,3 +110,6 @@ MonoBehaviour:
   spawnerlayer:
     serializedVersion: 2
     m_Bits: 2048
+  meteor: {fileID: 1220209256971398747, guid: 3b7cb9f114b22bc488f1ba58286b955f, type: 3}
+  timer: 0
+  delay: 10
