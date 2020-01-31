@@ -65,15 +65,15 @@ public class Inventory : MonoBehaviour
         inventory.Add(ITEM.WOOD, 0);
 
         //Test inv
-        Debug.Log("Test 1: " + "INV SIZE: " + currentInvSize.ToString() + " STONE: " + inventory[ITEM.STONE].ToString() + " WOOD: " + inventory[ITEM.WOOD]);
-        UpdateInv(ITEM.WOOD, 3);
-        Debug.Log("Test 2: " + "INV SIZE: " + currentInvSize.ToString() + " STONE: " + inventory[ITEM.STONE].ToString() + " WOOD: " + inventory[ITEM.WOOD]);
-        UpdateInv(ITEM.STONE, 1);
-        Debug.Log("Test 3: " + "INV SIZE: " + currentInvSize.ToString() + " STONE: " + inventory[ITEM.STONE].ToString() + " WOOD: " + inventory[ITEM.WOOD]);
-        UpdateInv(ITEM.WOOD, 1);
-        Debug.Log("Test 3: " + "INV SIZE: " + currentInvSize.ToString() + " STONE: " + inventory[ITEM.STONE].ToString() + " WOOD: " + inventory[ITEM.WOOD]);
-        UpdateInv(ITEM.WOOD, -2);
-        Debug.Log("Test 4: " + "INV SIZE: " + currentInvSize.ToString() + " STONE: " + inventory[ITEM.STONE].ToString() + " WOOD: " + inventory[ITEM.WOOD]);
+        //Debug.Log("Test 1: " + "INV SIZE: " + currentInvSize.ToString() + " STONE: " + inventory[ITEM.STONE].ToString() + " WOOD: " + inventory[ITEM.WOOD]);
+        //UpdateInv(ITEM.WOOD, 3);
+        //Debug.Log("Test 2: " + "INV SIZE: " + currentInvSize.ToString() + " STONE: " + inventory[ITEM.STONE].ToString() + " WOOD: " + inventory[ITEM.WOOD]);
+        //UpdateInv(ITEM.STONE, 1);
+        //Debug.Log("Test 3: " + "INV SIZE: " + currentInvSize.ToString() + " STONE: " + inventory[ITEM.STONE].ToString() + " WOOD: " + inventory[ITEM.WOOD]);
+        //UpdateInv(ITEM.WOOD, 1);
+        //Debug.Log("Test 3: " + "INV SIZE: " + currentInvSize.ToString() + " STONE: " + inventory[ITEM.STONE].ToString() + " WOOD: " + inventory[ITEM.WOOD]);
+        //UpdateInv(ITEM.WOOD, -2);
+        //Debug.Log("Test 4: " + "INV SIZE: " + currentInvSize.ToString() + " STONE: " + inventory[ITEM.STONE].ToString() + " WOOD: " + inventory[ITEM.WOOD]);
 
     }
 
