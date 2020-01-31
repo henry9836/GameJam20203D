@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1220209256971398721}
   m_Layer: 0
   m_Name: meteor
-  m_TagString: Untagged
+  m_TagString: meteor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   initsize: 3
-  speed: 10000
+  speed: 5000
   player: {fileID: 2322193015724414902, guid: 70068b2686d986d4dbcfabd8c89f3e1b, type: 3}
   DeathIsInevitable: 0
 --- !u!54 &1220209256971398721
