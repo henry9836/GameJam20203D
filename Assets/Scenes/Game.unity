@@ -2475,6 +2475,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 331999336}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1267282575 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5195001045353622702, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2085028888}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1276774152 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5795505278109526770, guid: 045389343a29e1c4eacd8fdbd2b8f115,
@@ -3915,5 +3921,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8295252267393398226, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
+        type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 9217
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295252267393398226, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
+        type: 3}
+      propertyPath: gunTip
+      value: 
+      objectReference: {fileID: 1267282575}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70068b2686d986d4dbcfabd8c89f3e1b, type: 3}
