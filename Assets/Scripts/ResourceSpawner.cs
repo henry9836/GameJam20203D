@@ -37,6 +37,10 @@ public class ResourceSpawner : MonoBehaviour
             {
                 Spawnedobjs = GameObject.FindGameObjectsWithTag("mineableStone");
             }
+            else if (type == Inventory.ITEM.UNASSIGNED)
+            {
+                Spawnedobjs = GameObject.FindGameObjectsWithTag(spawnableObjects[0].tag);
+            }
 
             if (maxObjects >= Spawnedobjs.Length)
             {
