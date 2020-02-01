@@ -16,6 +16,13 @@ public class distructableObjs : MonoBehaviour
     private BoxCollider boxCol;
     public bool amDead = false;
     public bool isTV = false;
+
+    public AudioClip woodded;
+    public AudioClip stoneded;
+    public AudioSource source;
+    public bool playone = true;
+
+    
     private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
@@ -46,6 +53,7 @@ public class distructableObjs : MonoBehaviour
         //If good health
         if (HP > damagedHealthStateThreshold)
         {
+            playone = true;
             if (!matOverrideFlag)
             {
                 meshRenderer.material = fullHealthState;
@@ -70,6 +78,23 @@ public class distructableObjs : MonoBehaviour
             }
 
             amDead = true;
+
+            if (playone == true)
+            {
+                playone = false;
+                if (this.gameObject.tag == "Tile")
+                {
+                    source.clip = stoneded;
+                    source.Play();
+                }
+                if (this.gameObject.tag == "Plank")
+                {
+                    source.clip = woodded;
+                    source.Play();
+                }
+
+            }
+
         }
 
         //TV DED

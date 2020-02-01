@@ -85,6 +85,11 @@ public class meteor : MonoBehaviour
                     {
                         Destroy(hit.collider.gameObject);
                     }
+                    //TV Logic
+                    if (hit.collider.tag == "TVOBJ")
+                    {
+                        hit.collider.gameObject.SetActive(false);
+                    }
                     else
                     {
                         hit.transform.gameObject.GetComponent<distructableObjs>().HP -= size * 5.0f;
