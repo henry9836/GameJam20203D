@@ -75,7 +75,7 @@ public class distructableObjs : MonoBehaviour
         //TV DED
         if (amDead && isTV)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

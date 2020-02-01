@@ -44,7 +44,6 @@ public class BuildVisual : MonoBehaviour
             for (int i = 0; i < repairableObjs.Count; i++)
             {
                 //Check distance
-
                 if (Vector3.Distance(repairableObjs[i].transform.position, player.transform.position) < distanceThreshold)
                 {
                     //Check damage

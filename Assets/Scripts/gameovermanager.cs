@@ -21,7 +21,7 @@ public class gameovermanager : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(player.transform.position, Vector3.zero) >= deathdistance && gameover == false)
+        if (Vector3.Distance(player.transform.position, new Vector3(3.0f, 2.2f, -2.76f)) >= deathdistance && gameover == false)
         {
             player.transform.GetChild(0).GetComponent<MouseLook>().enabled = false;
             gameover = true;
