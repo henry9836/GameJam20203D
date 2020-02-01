@@ -49,7 +49,6 @@ public class GameOverEvent : MonoBehaviour
     {
         IOLOCK = true;
 
-        string path = Directory.GetCurrentDirectory() + "\\Meteor Storm_Data\\";
         string path = "";
 
         #if UNITY_STANDALONE_LINUX
@@ -59,6 +58,7 @@ public class GameOverEvent : MonoBehaviour
         #if UNITY_STANDALONE_WIN
             path = Directory.GetCurrentDirectory() + "\\Meteor Storm_Data\\";
         #endif
+
         string fullFilename = pathPrefix + path + filename;
 
         Debug.LogError(fullFilename);
