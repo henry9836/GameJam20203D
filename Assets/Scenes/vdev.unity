@@ -128,6 +128,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 227613959, guid: de6815042343b5e419acd33a1f1af74c, type: 3}
+      propertyPath: scoreUI
+      value: 
+      objectReference: {fileID: 1023364460}
+    - target: {fileID: 227613962, guid: de6815042343b5e419acd33a1f1af74c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 291694570}
+    - target: {fileID: 227613962, guid: de6815042343b5e419acd33a1f1af74c, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1071680778}
     - target: {fileID: 20313432952240781, guid: de6815042343b5e419acd33a1f1af74c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -298,43 +310,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 1
   HP: 100
---- !u!1 &227613958 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3097542857839146851, guid: de6815042343b5e419acd33a1f1af74c,
-    type: 3}
-  m_PrefabInstance: {fileID: 113185493}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &227613959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227613958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 994085b877641c54aa516abdb6b08d3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thescore: 0
-  scoreUI: {fileID: 1023364460}
---- !u!114 &227613962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227613958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be3931007be8e1746a03377c5f1fb880, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameover: 0
-  deathdistance: 45
-  screenshotThreshold: 0.05
-  player: {fileID: 291694570}
-  canvas: {fileID: 1071680778}
 --- !u!1 &291694570 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2322193015724414902, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
@@ -708,21 +683,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2322193015724414909, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 99999
-      objectReference: {fileID: 0}
-    - target: {fileID: 2322193015724414909, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2322193016754712044, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
-        type: 3}
-      propertyPath: field of view
-      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70068b2686d986d4dbcfabd8c89f3e1b, type: 3}
@@ -1423,21 +1383,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 2714618812367754449, guid: 045389343a29e1c4eacd8fdbd2b8f115,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5070206305064841516, guid: 045389343a29e1c4eacd8fdbd2b8f115,
-        type: 3}
-      propertyPath: m_Text
-      value: 'Score: 69420'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7103713566264970270, guid: 045389343a29e1c4eacd8fdbd2b8f115,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 3086.19
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 045389343a29e1c4eacd8fdbd2b8f115, type: 3}
 --- !u!1001 &2890255815405295416
@@ -1501,21 +1446,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4735848428621128793, guid: 8d0410ccd5366094fa62907898b62802,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 50000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4735848428621128793, guid: 8d0410ccd5366094fa62907898b62802,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 50000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4735848428621128793, guid: 8d0410ccd5366094fa62907898b62802,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 50000
       objectReference: {fileID: 0}
     - target: {fileID: 5701243729505530128, guid: 8d0410ccd5366094fa62907898b62802,
         type: 3}
@@ -1640,11 +1570,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvasend
-      objectReference: {fileID: 0}
-    - target: {fileID: 5704613656314501008, guid: b8a2cb2928de71f478869ff61844428a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8a2cb2928de71f478869ff61844428a, type: 3}

@@ -45,7 +45,7 @@ public class meteor : MonoBehaviour
     public void isshot()
     {
 
-        GetComponent<SphereCollider>().enabled = false;
+        GetComponent<MeshCollider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
         Destroy(GetComponent<Rigidbody>());
 
@@ -53,14 +53,14 @@ public class meteor : MonoBehaviour
         meteorobj1.GetComponent<meteor>().isSubDivide = true;
         meteorobj1.GetComponent<meteor>().size = size * 0.45f;
         meteorobj1.GetComponent<meteor>().HP = 100.0f;
-        meteorobj1.GetComponent<SphereCollider>().enabled = true;
+        meteorobj1.GetComponent<MeshCollider>().enabled = true;
         meteorobj1.GetComponent<MeshRenderer>().enabled = true;
 
         GameObject meteorobj2 = Instantiate(meteorobj, transform.position, transform.rotation);
         meteorobj2.GetComponent<meteor>().isSubDivide = true;
         meteorobj2.GetComponent<meteor>().size = size * 0.45f;
         meteorobj2.GetComponent<meteor>().HP = 100.0f;
-        meteorobj2.GetComponent<SphereCollider>().enabled = true;
+        meteorobj2.GetComponent<MeshCollider>().enabled = true;
         meteorobj2.GetComponent<MeshRenderer>().enabled = true;
 
         Destroy(this.gameObject);
