@@ -12,6 +12,8 @@ TagManager:
   - meteor
   - mineableStone
   - mineableWood
+  - mineable
+  - GAMEOVERSCREEN
   layers:
   - Default
   - TransparentFX
