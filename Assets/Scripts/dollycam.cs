@@ -11,6 +11,7 @@ public class dollycam : MonoBehaviour
     void Start()
     {
         StartCoroutine(atob());
+        StartCoroutine(GameObject.Find("GameManager").GetComponent<musicmanager>().menuIN());
     }
 
     void Update()
@@ -30,7 +31,8 @@ public class dollycam : MonoBehaviour
  
                 once = false;
                 StartCoroutine(btoc());
-                
+                StartCoroutine(GameObject.Find("GameManager").GetComponent<musicmanager>().menutoBG());
+
             }
         }
     }
