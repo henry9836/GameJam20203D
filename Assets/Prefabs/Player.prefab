@@ -364,6 +364,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunTip: {fileID: 5195001045353622702}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 9217
 --- !u!114 &2322193016754712046
 MonoBehaviour:
   m_ObjectHideFlags: 0
