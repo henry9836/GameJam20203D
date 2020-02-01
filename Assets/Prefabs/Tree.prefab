@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6993381824417827143}
   - component: {fileID: 908939894292425593}
   - component: {fileID: -2094441115087235286}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Tree
   m_TagString: mineableWood
   m_Icon: {fileID: 0}
