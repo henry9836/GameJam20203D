@@ -80,6 +80,7 @@ public class meteor : MonoBehaviour
                 {
 
                     Debug.Log(hit.transform.gameObject.name);
+
                     //Tree Logic
                     if (hit.collider.tag == "mineableWood")
                     {
@@ -93,6 +94,18 @@ public class meteor : MonoBehaviour
                     else
                     {
                         hit.transform.gameObject.GetComponent<distructableObjs>().HP -= size * 5.0f;
+                    }
+                }
+
+                hits = Physics.SphereCastAll(transform.position, 60.0f, transform.forward, 1.0f);
+                foreach (var hit in hits)
+                {
+
+                    if (hit.collider.tag == "Player")
+                    {
+                        Debug.Log("boom");
+
+                        hit.collider.transform.gameObject.GetComponent<Rigidbody>().AddExplosionForce(470.0f, this.transform.position, 300.0f, 6.0f);
                     }
                 }
                 StartCoroutine(despawn());
