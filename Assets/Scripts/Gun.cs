@@ -26,7 +26,6 @@ public class Gun : MonoBehaviour
                     if (hit.transform.gameObject.GetComponent<meteor>().HP > 0.0f)
                     {
                         hit.transform.gameObject.GetComponent<meteor>().HP -= 250.0f * Time.deltaTime;
-                        Debug.Log(hit.transform.gameObject.GetComponent<meteor>().HP);
                     }
                     else
                     {

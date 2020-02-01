@@ -39,15 +39,12 @@ public class gameovermanager : MonoBehaviour
     {
         for (float t = 0.0f; t < 1.0f; t += Time.unscaledDeltaTime * 0.3f)
         {
-            Debug.Log(Time.timeScale);
             Time.timeScale = Mathf.Lerp(1.0f, screenshotThreshold, t);
             Time.fixedDeltaTime = .02f * Time.timeScale;
 
             yield return null;
         }
 
-        //save and freeze game
-        Debug.LogWarning("fddf");
         Time.timeScale = 0.0f;
         Time.fixedDeltaTime = 0.0f;
 
@@ -57,10 +54,5 @@ public class gameovermanager : MonoBehaviour
         yield return new WaitForSecondsRealtime(1.5f);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
     }
-
-
-
-
 }
