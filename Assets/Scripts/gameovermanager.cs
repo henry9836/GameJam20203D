@@ -17,6 +17,8 @@ public class gameovermanager : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         Time.fixedDeltaTime = (1.0f / 60.0f);
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
