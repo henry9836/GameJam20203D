@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 227613959}
   - component: {fileID: 227613962}
   - component: {fileID: 5822728039007797706}
+  - component: {fileID: 9181105707532302337}
   - component: {fileID: 4298039441518677044}
   m_Layer: 0
   m_Name: GameManager
@@ -106,6 +107,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c29058a0ca56ff7408f27145dc87cb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menu: {fileID: 0}
+  BG: {fileID: 0}
+  source: {fileID: 0}
+  menuvol: 0.75
+  BGvol: 1
+--- !u!114 &9181105707532302337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3097542857839146851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06526f1c4f7ba74a930c76e7dd5adec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeThreshold: {x: 1, y: 10}
+  spawnerSphere: {fileID: 0}
+  starPrefab: {fileID: 3921589629895168333, guid: 9071f85754932134fbe8802ecd30738d,
+    type: 3}
 --- !u!82 &4298039441518677044
 AudioSource:
   m_ObjectHideFlags: 0
