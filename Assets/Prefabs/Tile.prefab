@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5423730058349959353, guid: bd214e33b9fc32e45b0d13460c3cb444, type: 3}
+  - {fileID: 2100000, guid: 60511a4ba87e1e5448905c01aed63c4a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,8 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   damagedHealthStateThreshold: 50
-  fullHealthState: {fileID: -5423730058349959353, guid: bd214e33b9fc32e45b0d13460c3cb444,
-    type: 3}
+  fullHealthState: {fileID: 2100000, guid: 60511a4ba87e1e5448905c01aed63c4a, type: 2}
   damagedHealthState: {fileID: 2100000, guid: d0b326b05fb5780419e5894617b3bc6b, type: 2}
   destroyedHealthState: {fileID: 2100000, guid: 5010e2faa05bbc041970b588974bf62d,
     type: 2}
