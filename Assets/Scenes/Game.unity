@@ -675,6 +675,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e24f23c96fd4d940a1a80e75e5d1267, type: 3}
+--- !u!1 &321645790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 321645792}
+  - component: {fileID: 321645791}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &321645791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321645790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdfacf1316dfc8447aa2cc7a9fa06e70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnRadius: 60
+  maxObjects: 30
+  type: 0
+  minMaxSpawnTimeThreshold: {x: 2, y: 7}
+  spawnableObjects:
+  - {fileID: 398372666410280875, guid: 864ff4f271cf773488e8f2d560bf24dc, type: 3}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  safeSpawnCheckRadius: 1
+--- !u!4 &321645792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321645790}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.72, y: -0.08, z: -1.36}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &331999336
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2417,7 +2470,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1000750414 stripped
 Transform:
@@ -4222,7 +4275,7 @@ MonoBehaviour:
   spawnRadius: 60
   maxObjects: 60
   type: 1
-  minMaxSpawnTimeThreshold: {x: 2, y: 15}
+  minMaxSpawnTimeThreshold: {x: 2, y: 7}
   spawnableObjects:
   - {fileID: 5020546482582930613, guid: fb653e004a9111047a6955ac497f846e, type: 3}
   groundLayer:
@@ -4287,7 +4340,7 @@ MonoBehaviour:
   spawnRadius: 60
   maxObjects: 60
   type: 2
-  minMaxSpawnTimeThreshold: {x: 2, y: 15}
+  minMaxSpawnTimeThreshold: {x: 2, y: 7}
   spawnableObjects:
   - {fileID: 2289754693562466777, guid: e11358fe072536c45b48ee97e32d388f, type: 3}
   groundLayer:
