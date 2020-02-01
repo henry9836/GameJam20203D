@@ -46,13 +46,18 @@ public class spawner : MonoBehaviour
                 round += 1;
                 if (round <= 9)
                 {
-                    int[] zombs = new int[10] { 0, 6, 8, 13, 18, 24, 27, 28, 28, 29 };
+                    int[] zombs = new int[10] { 0, 6, 8, 13, 18, 24, 26, 27, 28, 29 };
                     toSpawn = zombs[round];
                 }
                 if (round >= 10)
                 {
                     toSpawn = Mathf.FloorToInt(24 + ((3 * ((round / 5) * (round * 0.15f)))));
                 }
+
+                //halfs amount(balancing)
+                toSpawn = Mathf.FloorToInt(toSpawn / 2);
+                //--
+
 
                 stage1time = (0.05f * (float)Mathf.Pow(round, 2) + 10f) / 2.0f;
                 stage2time = (0.05f * (float)Mathf.Pow(round, 2) + 10f);
@@ -100,7 +105,6 @@ public class spawner : MonoBehaviour
     public IEnumerator pickpos()
     {
         haveSpawn += 1;
-
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(0.1f, 1.0f))), out hit, Mathf.Infinity, spawnerlayer))
         {
