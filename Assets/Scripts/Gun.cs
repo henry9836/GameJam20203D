@@ -6,7 +6,7 @@ public class Gun : MonoBehaviour
 {
 
     public GameObject gunTip;
-    
+    public LayerMask layerMask;
 
     void Update()
     {
@@ -19,7 +19,7 @@ public class Gun : MonoBehaviour
             }
             RaycastHit hit;
             //If we hit something
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
             {
                 if (hit.transform.gameObject.tag == "meteor")
                 {
