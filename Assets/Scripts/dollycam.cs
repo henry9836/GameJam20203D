@@ -9,6 +9,7 @@ public class dollycam : MonoBehaviour
     public bool atobestart = false;
 
     private GameObject player;
+    private GameObject sphere;
 
     void Start()
     {
@@ -18,6 +19,8 @@ public class dollycam : MonoBehaviour
         player.GetComponent<PlayerMovement>().enabled = false;
         player.transform.GetChild(0).GetComponent<Gun>().enabled = false;
         player.transform.GetChild(0).GetComponent<MouseLook>().enabled = false;
+        sphere = GameObject.Find("HollowSphere");
+        sphere.SetActive(false);
     }
 
     void Update()
@@ -70,6 +73,8 @@ public class dollycam : MonoBehaviour
             player.GetComponent<PlayerMovement>().enabled = true;
             player.transform.GetChild(0).GetComponent<Gun>().enabled = true;
             player.transform.GetChild(0).GetComponent<MouseLook>().enabled = true;
+            sphere.SetActive(true);
+
             Destroy(this.gameObject);
         }
 
