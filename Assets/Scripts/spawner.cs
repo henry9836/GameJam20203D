@@ -113,4 +113,15 @@ public class spawner : MonoBehaviour
         yield return null;
     }
 
+    public IEnumerator pickposstar()
+    {
+        haveSpawn += 1;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f))), out hit, Mathf.Infinity, spawnerlayer))
+        {
+            //Instantiate(meteor, hit.point, transform.rotation); insert star prefab here
+        }
+        yield return null;
+    }
+
 }
