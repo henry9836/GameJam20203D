@@ -139,5 +139,5 @@ MonoBehaviour:
   deathDealy: 0.5
   particlePrefab: {fileID: 3004377343984599233, guid: 548874f18fe615949adfa2f6740ae0f1,
     type: 3}
-  StartSizeRange: {x: 3, y: 7}
+  StartSizeRange: {x: 4, y: 10}
   HP: 100
