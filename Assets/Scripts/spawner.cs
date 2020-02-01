@@ -29,6 +29,8 @@ public class spawner : MonoBehaviour
 
     void Update()
     {
+        StartCoroutine(pickposstar());
+
         timer += Time.deltaTime;
         if (resting == true)
         {
@@ -109,6 +111,17 @@ public class spawner : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(0.1f, 1.0f))), out hit, Mathf.Infinity, spawnerlayer))
         {
             Instantiate(meteor, hit.point, transform.rotation);
+        }
+        yield return null;
+    }
+
+    public IEnumerator pickposstar()
+    {
+        haveSpawn += 1;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(0.1f, 1.0f))), out hit, Mathf.Infinity, spawnerlayer))
+        {
+            //Instantiate(meteor, hit.point, transform.rotation); srat
         }
         yield return null;
     }
