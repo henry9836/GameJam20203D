@@ -15,7 +15,7 @@ public class meteor : MonoBehaviour
     public GameObject meteorobj;
     public float hitspred = 0.9f;
     public float deathDealy = 0.5f;
-
+    public GameObject particlePrefab;
     private float lifetime = 30.0f;
 
     public float HP = 100.0f;
@@ -70,6 +70,8 @@ public class meteor : MonoBehaviour
     {
         if (DeathIsInevitable == false)
         {
+            Instantiate(particlePrefab, collision.contacts[0].point, Quaternion.identity);
+
             if (collision.gameObject.tag != gameObject.tag)
             {
                 DeathIsInevitable = true;

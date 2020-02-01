@@ -121,6 +121,8 @@ MonoBehaviour:
   meteorobj: {fileID: 1220209256971398747}
   hitspred: 0.4
   deathDealy: 0.5
+  particlePrefab: {fileID: 3004377343984599233, guid: 548874f18fe615949adfa2f6740ae0f1,
+    type: 3}
   HP: 100
 --- !u!54 &1220209256971398721
 Rigidbody:
