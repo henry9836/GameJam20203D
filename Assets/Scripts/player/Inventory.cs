@@ -6,7 +6,7 @@ public class Inventory : MonoBehaviour
 {
 
     public int maxInvSize = 4;
-    private int currentInvSize = 0;
+    public int currentInvSize = 0;
 
     public enum ITEM
     {
