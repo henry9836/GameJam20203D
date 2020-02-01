@@ -18,6 +18,5 @@ public class score : MonoBehaviour
     {
         thescore += ammount;
         scoreUI.GetComponent<Text>().text = "Score: " + thescore.ToString("F0");
-
     }
 }
