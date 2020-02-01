@@ -61,7 +61,7 @@ public class GameOverEvent : MonoBehaviour
 
         string fullFilename = pathPrefix + path + filename;
 
-        Debug.LogError(fullFilename);
+        //Debug.LogError(fullFilename);
 
         WWW www = new WWW(fullFilename);
         Texture2D screenshot = new Texture2D(1920, 1080, TextureFormat.DXT1, false);
