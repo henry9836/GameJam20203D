@@ -983,11 +983,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 775059351374262627, guid: 2f978a78ca1431d41b0a8e9f790d2734,
         type: 3}
-      propertyPath: backgroundColorHDR.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 775059351374262627, guid: 2f978a78ca1431d41b0a8e9f790d2734,
-        type: 3}
       propertyPath: backgroundColorHDR.r
       value: 0
       objectReference: {fileID: 0}
@@ -3301,8 +3296,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1645454561}
   - component: {fileID: 1645454560}
-  - component: {fileID: 1645454563}
-  - component: {fileID: 1645454562}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -3325,7 +3318,7 @@ MonoBehaviour:
   spawnRadius: 60
   maxObjects: 60
   type: 1
-  minMaxSpawnTimeThreshold: {x: 0.1, y: 0.5}
+  minMaxSpawnTimeThreshold: {x: 2, y: 15}
   spawnableObjects:
   - {fileID: 5020546482582930613, guid: fb653e004a9111047a6955ac497f846e, type: 3}
   groundLayer:
@@ -3346,53 +3339,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1645454562
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1645454559}
-  m_Mesh: {fileID: 4300002, guid: cd0713beb0b2adf44a000adc6215c9dd, type: 3}
---- !u!23 &1645454563
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1645454559}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!4 &1648949985 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3239749626875405256, guid: 7e24f23c96fd4d940a1a80e75e5d1267,
@@ -3409,8 +3355,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1722476649}
   - component: {fileID: 1722476648}
-  - component: {fileID: 1722476651}
-  - component: {fileID: 1722476650}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -3433,7 +3377,7 @@ MonoBehaviour:
   spawnRadius: 60
   maxObjects: 60
   type: 2
-  minMaxSpawnTimeThreshold: {x: 0.1, y: 0.5}
+  minMaxSpawnTimeThreshold: {x: 2, y: 15}
   spawnableObjects:
   - {fileID: 2289754693562466777, guid: e11358fe072536c45b48ee97e32d388f, type: 3}
   groundLayer:
@@ -3454,53 +3398,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1722476650
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722476647}
-  m_Mesh: {fileID: 4300002, guid: cd0713beb0b2adf44a000adc6215c9dd, type: 3}
---- !u!23 &1722476651
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722476647}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!4 &1777556256 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4138835514832965884, guid: a3efe345caaee41479b6140f2058d213,

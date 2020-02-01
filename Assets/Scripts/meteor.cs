@@ -79,8 +79,17 @@ public class meteor : MonoBehaviour
                 RaycastHit[] hits = Physics.SphereCastAll(transform.position, size + additionalexplosionraduis, transform.forward, 1.0f, distructable);
                 foreach (var hit in hits)
                 {
+
                     Debug.Log(hit.transform.gameObject.name);
-                    hit.transform.gameObject.GetComponent<distructableObjs>().HP -= size * 5.0f;
+                    //Tree Logic
+                    if (hit.collider.tag == "mineableWood")
+                    {
+                        Destroy(hit.collider.gameObject);
+                    }
+                    else
+                    {
+                        hit.transform.gameObject.GetComponent<distructableObjs>().HP -= size * 5.0f;
+                    }
                 }
                 StartCoroutine(despawn());
             }
