@@ -16,10 +16,10 @@ MonoBehaviour:
   m_AdvancedMode: 0
   quality:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 2
   intensity:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 1
     min: 0
   maximumVelocity:
     m_OverrideState: 0
@@ -66,13 +66,13 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   length:
-    m_OverrideState: 0
-    m_Value: 0.15
+    m_OverrideState: 1
+    m_Value: 0.137
     min: 0
     max: 1
   opacity:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 0.09
     min: 0
     max: 1
   distanceScaleFactor:
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: HDRPDefaultSettings
+  m_Name: MeteorStorm
   m_EditorClassIdentifier: 
   components:
   - {fileID: 7686318427622180703}
@@ -239,17 +239,17 @@ MonoBehaviour:
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.468
     min: 0
     max: 1
   scatter:
-    m_OverrideState: 0
-    m_Value: 0.7
+    m_OverrideState: 1
+    m_Value: 0.701
     min: 0
     max: 1
   tint:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0.1792453, g: 0.17746362, b: 0.10737807, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   quality:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 0
   rayTracing:
     m_OverrideState: 0
     m_Value: 0
@@ -390,8 +390,8 @@ MonoBehaviour:
     min: 0
     max: 4
   directLightingStrength:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 0.256
     min: 0
     max: 1
   radius:
