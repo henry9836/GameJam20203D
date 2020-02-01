@@ -30,7 +30,7 @@ public class gameovermanager : MonoBehaviour
             GameObject.Find("Canvas").gameObject.SetActive(false);
             canvas.gameObject.SetActive(true);
             canvas.transform.GetChild(0).GetComponent<Text>().text = "Score: " + this.gameObject.GetComponent<score>().thescore.ToString("F0");
-
+            StartCoroutine(GameObject.Find("GameManager").GetComponent<musicmanager>().BGout());
             StartCoroutine(slow());
         }
     }
