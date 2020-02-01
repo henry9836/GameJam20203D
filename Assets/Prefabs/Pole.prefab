@@ -111,12 +111,13 @@ MonoBehaviour:
   damagedHealthStateThreshold: 50
   fullHealthState: {fileID: -5423730058349959353, guid: fb7dec73a707fdc43ba04993f0093760,
     type: 3}
-  damagedHealthState: {fileID: 2100000, guid: 85097d0212fae694bbd2ace4e40ff157, type: 2}
+  damagedHealthState: {fileID: 2100000, guid: 747e30410089e2f4c8864ac05248f3f3, type: 2}
   destroyedHealthState: {fileID: 2100000, guid: 5010e2faa05bbc041970b588974bf62d,
     type: 2}
   matOverrideFlag: 0
   overrideMaterial: {fileID: 0}
   amDead: 0
+  isTV: 0
 --- !u!1 &9085184924104990603
 GameObject:
   m_ObjectHideFlags: 0
