@@ -8,10 +8,16 @@ public class dollycam : MonoBehaviour
     public bool once = true;
     public bool atobestart = false;
 
+    private GameObject player;
+
     void Start()
     {
         StartCoroutine(atob());
         StartCoroutine(GameObject.Find("GameManager").GetComponent<musicmanager>().menuIN());
+        player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PlayerMovement>().enabled = false;
+        player.transform.GetChild(0).GetComponent<Gun>().enabled = false;
+        player.transform.GetChild(0).GetComponent<MouseLook>().enabled = false;
     }
 
     void Update()
@@ -61,6 +67,9 @@ public class dollycam : MonoBehaviour
         if (AnimatorIsPlaying() == false)
         {
             GameObject.Find("GameManager").GetComponent<score>().thescore = 0.0f;
+            player.GetComponent<PlayerMovement>().enabled = true;
+            player.transform.GetChild(0).GetComponent<Gun>().enabled = true;
+            player.transform.GetChild(0).GetComponent<MouseLook>().enabled = true;
             Destroy(this.gameObject);
         }
 
