@@ -30,7 +30,6 @@ public class Gun : MonoBehaviour
                     if (hit.transform.gameObject.GetComponent<mineable>().HP > 0.0f)
                     {
                         hit.transform.gameObject.GetComponent<mineable>().HP -= 200.0f * Time.deltaTime;
-                        Debug.Log(hit.transform.gameObject.GetComponent<mineable>().HP);
                     }
                     else
                     {
