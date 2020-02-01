@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6993381824417827143}
   - component: {fileID: 908939894292425593}
   - component: {fileID: -2094441115087235286}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tree
   m_TagString: mineableWood
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6359433721751934423, guid: 29004ec64b6374c43a0046bf94fc5358, type: 3}
+  - {fileID: 2100000, guid: 33d7ae69885482f46b474ca967cfa547, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

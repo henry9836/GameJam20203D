@@ -1,27 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class dollycam : MonoBehaviour
 {
     public bool once = true;
+    public bool atobestart = false;
 
     void Start()
     {
         StartCoroutine(atob());
+        StartCoroutine(GameObject.Find("GameManager").GetComponent<musicmanager>().menuIN());
     }
 
     void Update()
     {
-        if (AnimatorIsPlaying() == false)
+        GameObject.Find("Canvas").transform.GetChild(1).GetComponent<Text>().text = "";
+
+        if (AnimatorIsPlaying() == false && once == true && atobestart == true)
         {
-            if (Input.anyKeyDown == true)
+            GameObject.Find("Canvas").transform.GetChild(1).GetComponent<Text>().text = "Press esc to quit, any other key to begin";
+
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (once == true)
-                {
-                    once = false;
-                    StartCoroutine(btoc());
-                }
+                Application.Quit();
+            }
+            else if (Input.anyKeyDown == true)
+            {
+ 
+                once = false;
+                StartCoroutine(btoc());
+                StartCoroutine(GameObject.Find("GameManager").GetComponent<musicmanager>().menutoBG());
+
             }
         }
     }
@@ -31,16 +42,13 @@ public class dollycam : MonoBehaviour
     public IEnumerator atob()
     {
         yield return new WaitForSeconds(2.0f);
+        atobestart = true;
         this.gameObject.GetComponent<Animator>().SetInteger("Stage", 0);
-        //this.gameObject.GetComponent<Animator>().Play("atob");
         yield return null;
     }
 
     public IEnumerator btoc()
     {
-        
-
-        //this.gameObject.GetComponent<Animator>().Play("btoc");
         this.gameObject.GetComponent<Animator>().SetInteger("Stage", 1);
 
         yield return new WaitForSeconds(2.0f);
@@ -52,6 +60,7 @@ public class dollycam : MonoBehaviour
 
         if (AnimatorIsPlaying() == false)
         {
+            GameObject.Find("GameManager").GetComponent<score>().thescore = 0.0f;
             Destroy(this.gameObject);
         }
 

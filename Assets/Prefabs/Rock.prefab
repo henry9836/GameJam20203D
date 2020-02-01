@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2289754693562466783}
   - component: {fileID: 2289754693562466782}
   - component: {fileID: -6426138935328030448}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Rock
   m_TagString: mineableStone
   m_Icon: {fileID: 0}

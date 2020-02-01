@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 85097d0212fae694bbd2ace4e40ff157, type: 2}
+  - {fileID: 2100000, guid: 46861f2581812ea4cbf75447f1a83161, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125,10 +125,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 1
-  additionalexplosionraduis: 5
+  additionalexplosionraduis: 3.5
   distructable:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 9216
   initsize: 3
   speed: 81000
   player: {fileID: 2322193015724414902, guid: 70068b2686d986d4dbcfabd8c89f3e1b, type: 3}
@@ -139,4 +139,5 @@ MonoBehaviour:
   deathDealy: 0.5
   particlePrefab: {fileID: 3004377343984599233, guid: 548874f18fe615949adfa2f6740ae0f1,
     type: 3}
+  StartSizeRange: {x: 3, y: 7}
   HP: 100
