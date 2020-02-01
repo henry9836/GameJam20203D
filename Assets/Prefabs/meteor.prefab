@@ -116,3 +116,39 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2890248136224460030}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220209256971398747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddabdc8dbf0da9e44ad4f386e4bde152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 1
+  additionalexplosionraduis: 5
+  distructable:
+    serializedVersion: 2
+    m_Bits: 1024
+  initsize: 3
+  speed: 25000
+  player: {fileID: 2322193015724414902, guid: 70068b2686d986d4dbcfabd8c89f3e1b, type: 3}
+  DeathIsInevitable: 0
+  isSubDivide: 0
+  meteorobj: {fileID: 1220209256971398747}
+  hitspred: 0.4
+  deathDealy: 0.5
+  HP: 100
+--- !u!54 &1220209256971398721
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220209256971398747}
+  serializedVersion: 2
+  m_Mass: 1000
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

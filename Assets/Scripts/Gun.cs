@@ -20,10 +20,12 @@ public class Gun : MonoBehaviour
                     }
                     else 
                     {
+                        GameObject.FindGameObjectWithTag("GameManager").GetComponent<score>().addscore(5.0f);
+
                         hit.transform.gameObject.GetComponent<meteor>().isshot();
                     }
                 }
-                else if (hit.transform.gameObject.tag == "mineable")
+                else if (hit.transform.gameObject.tag == "mineableWood" || hit.transform.gameObject.tag == "mineableStone")
                 {
                     if (hit.transform.gameObject.GetComponent<mineable>().HP > 0.0f)
                     {
@@ -32,7 +34,9 @@ public class Gun : MonoBehaviour
                     }
                     else
                     {
+                        GameObject.FindGameObjectWithTag("GameManager").GetComponent<score>().addscore(5.0f);
                         this.GetComponentInParent<Inventory>().UpdateInv(hit.transform.GetComponent<mineable>().selected, 1);
+                        Destroy(hit.transform.gameObject);
                     }
                 }
             }
