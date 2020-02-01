@@ -16,7 +16,7 @@ public class gameovermanager : MonoBehaviour
     void Awake()
     {
         Time.timeScale = 1.0f;
-        Time.fixedDeltaTime = 0.02f;
+        Time.fixedDeltaTime = (1.0f / 60.0f);
     }
 
     void Update()
@@ -50,9 +50,9 @@ public class gameovermanager : MonoBehaviour
         Time.fixedDeltaTime = 0.0f;
 
         //take screenshot
+        GetComponent<GameOverEvent>().ScreenShot();
 
-        yield return new WaitForSecondsRealtime(0.1f);
-
+        yield return new WaitForSecondsRealtime(1.5f);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 

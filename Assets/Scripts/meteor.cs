@@ -32,7 +32,7 @@ public class meteor : MonoBehaviour
     void Update()
     {
         this.transform.localScale = new Vector3(size, size, size);
-        this.gameObject.GetComponent<Rigidbody>().mass = 100.0f;
+        this.gameObject.GetComponent<Rigidbody>().mass = 500.0f;
 
         lifetime -= Time.deltaTime;
 

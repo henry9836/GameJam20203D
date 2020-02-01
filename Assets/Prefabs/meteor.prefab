@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1220209256971398749}
   - component: {fileID: 1220209256971398746}
   - component: {fileID: 1220209256971398721}
+  - component: {fileID: 6949417686834565879}
   m_Layer: 0
   m_Name: meteor
   m_TagString: meteor
@@ -91,7 +92,7 @@ SphereCollider:
   m_GameObject: {fileID: 1220209256971398747}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -113,7 +114,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   initsize: 3
-  speed: 25000
+  speed: 81000
   player: {fileID: 2322193015724414902, guid: 70068b2686d986d4dbcfabd8c89f3e1b, type: 3}
   DeathIsInevitable: 0
   isSubDivide: 0
@@ -136,4 +137,18 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
+--- !u!64 &6949417686834565879
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220209256971398747}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}

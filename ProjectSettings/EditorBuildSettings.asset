@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HenryDev.unity
     guid: 8c5ac30a3bee77947b2ee2860d1a8a7f
+  - enabled: 1
+    path: Assets/Scenes/vdev.unity
+    guid: 399f5bdc937f79b43af35df38c40a7d0
   m_configObjects: {}
