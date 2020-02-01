@@ -14,7 +14,8 @@ public class meteor : MonoBehaviour
     public bool isSubDivide = false;
     public GameObject meteorobj;
     public float hitspred = 0.9f;
-
+    public float deathDealy = 0.5f;
+    public GameObject particlePrefab;
     private float lifetime = 30.0f;
 
     public float HP = 100.0f;
@@ -23,7 +24,7 @@ public class meteor : MonoBehaviour
     {
         Debug.Log("hi");
         StartCoroutine(grow());
-        initsize = Random.Range(2.0f, 4.0f);
+        initsize = Random.Range(6.0f, 10.0f);
         player = GameObject.FindGameObjectWithTag("Player");
         gameObject.transform.LookAt(player.transform.position);
     }
@@ -31,7 +32,7 @@ public class meteor : MonoBehaviour
     void Update()
     {
         this.transform.localScale = new Vector3(size, size, size);
-        this.gameObject.GetComponent<Rigidbody>().mass = 150.0f;
+        this.gameObject.GetComponent<Rigidbody>().mass = 500.0f;
 
         lifetime -= Time.deltaTime;
 
@@ -44,22 +45,22 @@ public class meteor : MonoBehaviour
     public void isshot()
     {
 
-        GetComponent<SphereCollider>().enabled = false;
+        GetComponent<MeshCollider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
         Destroy(GetComponent<Rigidbody>());
 
         GameObject meteorobj1 = Instantiate(meteorobj, transform.position, transform.rotation);
         meteorobj1.GetComponent<meteor>().isSubDivide = true;
-        meteorobj1.GetComponent<meteor>().size = size * 0.65f;
+        meteorobj1.GetComponent<meteor>().size = size * 0.45f;
         meteorobj1.GetComponent<meteor>().HP = 100.0f;
-        meteorobj1.GetComponent<SphereCollider>().enabled = true;
+        meteorobj1.GetComponent<MeshCollider>().enabled = true;
         meteorobj1.GetComponent<MeshRenderer>().enabled = true;
 
         GameObject meteorobj2 = Instantiate(meteorobj, transform.position, transform.rotation);
         meteorobj2.GetComponent<meteor>().isSubDivide = true;
-        meteorobj2.GetComponent<meteor>().size = size * 0.65f;
+        meteorobj2.GetComponent<meteor>().size = size * 0.45f;
         meteorobj2.GetComponent<meteor>().HP = 100.0f;
-        meteorobj2.GetComponent<SphereCollider>().enabled = true;
+        meteorobj2.GetComponent<MeshCollider>().enabled = true;
         meteorobj2.GetComponent<MeshRenderer>().enabled = true;
 
         Destroy(this.gameObject);
@@ -69,6 +70,8 @@ public class meteor : MonoBehaviour
     {
         if (DeathIsInevitable == false)
         {
+            Instantiate(particlePrefab, collision.contacts[0].point, Quaternion.identity);
+
             if (collision.gameObject.tag != gameObject.tag)
             {
                 DeathIsInevitable = true;
@@ -78,7 +81,7 @@ public class meteor : MonoBehaviour
                     Debug.Log(hit.transform.gameObject.name);
                     hit.transform.gameObject.GetComponent<distructableObjs>().HP -= size * 25.0f;
                 }
-                Destroy(this.gameObject);
+                StartCoroutine(despawn());
             }
         }
     }
@@ -93,7 +96,7 @@ public class meteor : MonoBehaviour
                 size = Mathf.Lerp(0.0f, initsize, t);
                 yield return null;
             }
-            Vector3 dir = -(this.transform.position - player.transform.position).normalized;
+            Vector3 dir = -(this.transform.position - (player.transform.position + new Vector3(Random.Range(8.0f, -8.0f), Random.Range(8.0f, -8.0f), Random.Range(8.0f, -8.0f)))).normalized;
             this.gameObject.GetComponent<Rigidbody>().AddForce(dir * speed, ForceMode.Impulse);
         }
         else 
@@ -107,4 +110,13 @@ public class meteor : MonoBehaviour
             this.gameObject.GetComponent<Rigidbody>().AddForce(vec3dir * speed, ForceMode.Impulse);
         }
     }
+
+    public IEnumerator despawn()
+    {
+        yield return new WaitForSeconds(deathDealy);
+        Destroy(this.gameObject);
+
+        yield return null;
+    }
+
 }
