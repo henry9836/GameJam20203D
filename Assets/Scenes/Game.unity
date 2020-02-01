@@ -4414,6 +4414,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1016517881414719283, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
+        type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 1591634519}
+    - target: {fileID: 1016517881414719283, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
+        type: 3}
+      propertyPath: stonepickup
+      value: 
+      objectReference: {fileID: 8300000, guid: 6aafdb4167b7690449920b7eb8106d31, type: 3}
+    - target: {fileID: 1016517881414719283, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
+        type: 3}
+      propertyPath: woodpickup
+      value: 
+      objectReference: {fileID: 8300000, guid: 8f0f392d2d67cc44298f1d6335f65c40, type: 3}
     - target: {fileID: 1444399616314584076, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
         type: 3}
       propertyPath: m_Intensity
