@@ -8,6 +8,10 @@ public class Gun : MonoBehaviour
     public GameObject gunTip;
     public LayerMask layerMask;
 
+    public AudioClip woodmine;
+    public AudioClip stonemine;
+    public AudioSource source;
+
     void Update()
     {
         if (Input.GetButton("Fire1") == true)
@@ -26,7 +30,6 @@ public class Gun : MonoBehaviour
                     if (hit.transform.gameObject.GetComponent<meteor>().HP > 0.0f)
                     {
                         hit.transform.gameObject.GetComponent<meteor>().HP -= 250.0f * Time.deltaTime;
-                        Debug.Log(hit.transform.gameObject.GetComponent<meteor>().HP);
                     }
                     else
                     {
@@ -46,6 +49,17 @@ public class Gun : MonoBehaviour
                         GameObject.FindGameObjectWithTag("GameManager").GetComponent<score>().addscore(5.0f);
                         this.GetComponentInParent<Inventory>().UpdateInv(hit.transform.GetComponent<mineable>().selected, 1);
                         Destroy(hit.transform.gameObject);
+
+                        if (hit.transform.GetComponent<mineable>().selected == Inventory.ITEM.STONE)
+                        {
+                            source.clip = stonemine;
+                            source.Play();
+                        }
+                        else if (hit.transform.GetComponent<mineable>().selected == Inventory.ITEM.WOOD)
+                        {
+                            source.clip = woodmine;
+                            source.Play();
+                        }
                     }
                 }
                 //Hit Something

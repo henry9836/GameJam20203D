@@ -9,9 +9,17 @@ public class RepairMechanic : MonoBehaviour
     public int costForTile = 1;
     public LayerMask buildLayer;
 
+
+    public AudioClip woodpickup;
+    public AudioClip stonepickup;
+    public AudioSource source;
+
     private RaycastHit hit;
     private float buildDistance = 0;
     private Inventory inv;
+
+
+
 
     private void Start()
     {
@@ -38,6 +46,8 @@ public class RepairMechanic : MonoBehaviour
                         {
                             //Fix Plank
                             hit.collider.gameObject.transform.parent.GetComponent<distructableObjs>().HP = 100.0f;
+                            source.clip = woodpickup;
+                            source.Play();
                         }
                         else
                         {
@@ -50,8 +60,10 @@ public class RepairMechanic : MonoBehaviour
                         //Try and use inventory
                         if (inv.UpdateInv(Inventory.ITEM.STONE, -costForTile))
                         {
-                            //Fix Plank
+                            //Fix tile
                             hit.collider.gameObject.transform.parent.GetComponent<distructableObjs>().HP = 100.0f;
+                            source.clip = stonepickup;
+                            source.Play();
                         }
                         else
                         {
