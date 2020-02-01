@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b9ec5b28b4d194aa8e4551e35c4d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 49
+  HP: 100
   damagedHealthStateThreshold: 50
   fullHealthState: {fileID: -5423730058349959353, guid: fb7dec73a707fdc43ba04993f0093760,
     type: 3}
