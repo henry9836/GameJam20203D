@@ -8,10 +8,14 @@ public class dollycam : MonoBehaviour
     public bool once = true;
     public bool atobestart = false;
 
+    private GameObject player;
+
     void Start()
     {
         StartCoroutine(atob());
         StartCoroutine(GameObject.Find("GameManager").GetComponent<musicmanager>().menuIN());
+        player = GameObject.FindGameObjectWithTag("Player");
+        player.SetActive(false);
     }
 
     void Update()
@@ -61,6 +65,8 @@ public class dollycam : MonoBehaviour
         if (AnimatorIsPlaying() == false)
         {
             GameObject.Find("GameManager").GetComponent<score>().thescore = 0.0f;
+            player.SetActive(true);
+
             Destroy(this.gameObject);
         }
 
