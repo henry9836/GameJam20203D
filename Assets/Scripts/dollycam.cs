@@ -9,6 +9,7 @@ public class dollycam : MonoBehaviour
     public bool atobestart = false;
 
     private GameObject player;
+    private GameObject sphere;
 
     void Start()
     {
@@ -18,6 +19,10 @@ public class dollycam : MonoBehaviour
         player.GetComponent<PlayerMovement>().enabled = false;
         player.transform.GetChild(0).GetComponent<Gun>().enabled = false;
         player.transform.GetChild(0).GetComponent<MouseLook>().enabled = false;
+        sphere = GameObject.Find("HollowSphere");
+        sphere.SetActive(false);
+
+        
     }
 
     void Update()
@@ -26,7 +31,7 @@ public class dollycam : MonoBehaviour
 
         if (AnimatorIsPlaying() == false && once == true && atobestart == true)
         {
-            GameObject.Find("Canvas").transform.GetChild(1).GetComponent<Text>().text = "Press esc to quit, any other key to begin";
+            GameObject.Find("Canvas").transform.GetChild(1).GetComponent<Text>().text = "Press any key to play\nPress esc to quit";
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -70,6 +75,8 @@ public class dollycam : MonoBehaviour
             player.GetComponent<PlayerMovement>().enabled = true;
             player.transform.GetChild(0).GetComponent<Gun>().enabled = true;
             player.transform.GetChild(0).GetComponent<MouseLook>().enabled = true;
+            sphere.SetActive(true);
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().gameStart = true;
             Destroy(this.gameObject);
         }
 

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 227613962}
   - component: {fileID: 5822728039007797706}
   - component: {fileID: 9181105707532302337}
+  - component: {fileID: 708664982571738228}
   - component: {fileID: 4298039441518677044}
   m_Layer: 0
   m_Name: GameManager
@@ -128,6 +129,18 @@ MonoBehaviour:
   spawnerSphere: {fileID: 0}
   starPrefab: {fileID: 3921589629895168333, guid: 9071f85754932134fbe8802ecd30738d,
     type: 3}
+--- !u!114 &708664982571738228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3097542857839146851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7c2a0c8b5f0c94491b6d0e878cf90b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &4298039441518677044
 AudioSource:
   m_ObjectHideFlags: 0

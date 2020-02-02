@@ -3715,12 +3715,24 @@ PrefabInstance:
     - target: {fileID: 5070206305064841516, guid: 045389343a29e1c4eacd8fdbd2b8f115,
         type: 3}
       propertyPath: m_Text
-      value: 
+      value: 'hi
+
+        dw'
       objectReference: {fileID: 0}
     - target: {fileID: 7103713566264970270, guid: 045389343a29e1c4eacd8fdbd2b8f115,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 6987.2
+      value: 6887.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103713566264970270, guid: 045389343a29e1c4eacd8fdbd2b8f115,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1476
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103713566264970270, guid: 045389343a29e1c4eacd8fdbd2b8f115,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -21.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 045389343a29e1c4eacd8fdbd2b8f115, type: 3}
@@ -4698,6 +4710,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2322193016754712034, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
+        type: 3}
+      propertyPath: clearColorMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2322193016754712034, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
+        type: 3}
+      propertyPath: backgroundColorHDR.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2322193016754712034, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
+        type: 3}
+      propertyPath: backgroundColorHDR.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2322193016754712034, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
+        type: 3}
+      propertyPath: backgroundColorHDR.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2322193016754712044, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
+        type: 3}
+      propertyPath: far clip plane
+      value: 1000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295252267393398226, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
+        type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 650676643}
+    - target: {fileID: 8295252267393398226, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
+        type: 3}
+      propertyPath: stonemine
+      value: 
+      objectReference: {fileID: 8300000, guid: ecdc380738812e649a0fa7f54b48174e, type: 3}
+    - target: {fileID: 8295252267393398226, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
+        type: 3}
+      propertyPath: woodmine
+      value: 
+      objectReference: {fileID: 8300000, guid: d261ea5112d696741a003360f1249f81, type: 3}
+    - target: {fileID: 8490827181972872173, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1000000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70068b2686d986d4dbcfabd8c89f3e1b, type: 3}
