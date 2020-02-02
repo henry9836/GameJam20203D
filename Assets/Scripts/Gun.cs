@@ -16,6 +16,7 @@ public class Gun : MonoBehaviour
     {
         if (Input.GetButton("Fire1") == true)
         {
+            GameObject.Find("RayGun").GetComponent<gunshake>().shooting();
             gunTip.GetComponent<LineRenderer>().enabled = true;
             if (!gunTip.GetComponent<ParticleSystem>().isPlaying)
             {
