@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6861416590423857312}
   - component: {fileID: 2384321569936768489}
   - component: {fileID: 41298079659806290}
+  - component: {fileID: 1530633799978024781}
   m_Layer: 0
   m_Name: MinningGun
   m_TagString: Untagged
@@ -80,3 +81,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1530633799978024781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7276224743052552138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7d39f282b95f04ea319df589c343a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origX: 0
+  origY: 0
+  origZ: 0
