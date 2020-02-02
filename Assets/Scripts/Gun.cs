@@ -17,6 +17,10 @@ public class Gun : MonoBehaviour
         if (Input.GetButton("Fire1") == true)
         {
             gunTip.GetComponent<LineRenderer>().enabled = true;
+            if (!gunTip.GetComponent<ParticleSystem>().isPlaying)
+            {
+                gunTip.GetComponent<ParticleSystem>().Play();
+            }
             if (!gunTip.GetComponent<AudioSource>().isPlaying)
             {
                 gunTip.GetComponent<AudioSource>().Play();
@@ -65,18 +69,21 @@ public class Gun : MonoBehaviour
                 //Hit Something
                 gunTip.GetComponent<LineRenderer>().SetPosition(0, gunTip.transform.position);
                 gunTip.GetComponent<LineRenderer>().SetPosition(1, hit.point);
+                gunTip.transform.LookAt(hit.point);
             }
             else
             {
                 //Pretend To Hit Something
                 gunTip.GetComponent<LineRenderer>().SetPosition(0, gunTip.transform.position);
                 gunTip.GetComponent<LineRenderer>().SetPosition(1, transform.forward * 1000.0f);
+                gunTip.transform.LookAt(transform.forward * 1000.0f);
             }
         }
         else
         {
             gunTip.GetComponent<LineRenderer>().enabled = false;
             gunTip.GetComponent<AudioSource>().Stop();
+            gunTip.GetComponent<ParticleSystem>().Stop();
         }
     }
 }
