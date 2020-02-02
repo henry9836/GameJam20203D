@@ -3817,12 +3817,24 @@ PrefabInstance:
     - target: {fileID: 5070206305064841516, guid: 045389343a29e1c4eacd8fdbd2b8f115,
         type: 3}
       propertyPath: m_Text
-      value: 
+      value: 'hi
+
+        dw'
       objectReference: {fileID: 0}
     - target: {fileID: 7103713566264970270, guid: 045389343a29e1c4eacd8fdbd2b8f115,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 6987.2
+      value: 6887.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103713566264970270, guid: 045389343a29e1c4eacd8fdbd2b8f115,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1476
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103713566264970270, guid: 045389343a29e1c4eacd8fdbd2b8f115,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -21.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 045389343a29e1c4eacd8fdbd2b8f115, type: 3}
@@ -4947,6 +4959,11 @@ PrefabInstance:
         type: 3}
       propertyPath: backgroundColorHDR.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2322193016754712044, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
+        type: 3}
+      propertyPath: far clip plane
+      value: 1000000
       objectReference: {fileID: 0}
     - target: {fileID: 8295252267393398226, guid: 70068b2686d986d4dbcfabd8c89f3e1b,
         type: 3}

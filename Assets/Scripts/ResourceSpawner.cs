@@ -26,6 +26,11 @@ public class ResourceSpawner : MonoBehaviour
 
     IEnumerator SpawnLoop()
     {
+        while (!GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().gameStart)
+        {
+            yield return null;
+        }
+
         while (true)
         {
             GameObject[] Spawnedobjs = null;
@@ -33,7 +38,7 @@ public class ResourceSpawner : MonoBehaviour
             {
                 Spawnedobjs = GameObject.FindGameObjectsWithTag("mineableWood");
             }
-            else  if (type == Inventory.ITEM.STONE)
+            else if (type == Inventory.ITEM.STONE)
             {
                 Spawnedobjs = GameObject.FindGameObjectsWithTag("mineableStone");
             }

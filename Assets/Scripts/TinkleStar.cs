@@ -15,6 +15,12 @@ public class TinkleStar : MonoBehaviour
 
     IEnumerator SpawnDelay()
     {
+        while (!GetComponent<GameManager>().gameStart)
+        {
+            yield return null;
+        }
+
+
         while (true)
         {
             StartCoroutine(spawnerSphere.GetComponent<spawner>().pickposstar(starPrefab));
