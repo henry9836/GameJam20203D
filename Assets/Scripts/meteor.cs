@@ -110,7 +110,7 @@ public class meteor : MonoBehaviour
                     {
                         Debug.Log("boom");
 
-                        hit.collider.transform.gameObject.GetComponent<Rigidbody>().AddExplosionForce(470.0f, this.transform.position, 300.0f, 6.0f);
+                        hit.collider.transform.gameObject.GetComponent<Rigidbody>().AddExplosionForce(50.0f * size, this.transform.position, 25.0f, 0.6f * size);
                     }
                 }
                 StartCoroutine(despawn());
@@ -128,7 +128,7 @@ public class meteor : MonoBehaviour
                 size = Mathf.Lerp(0.0f, initsize, t);
                 yield return null;
             }
-            Vector3 dir = -(this.transform.position - (player.transform.position + new Vector3(Random.Range(8.0f, -8.0f), Random.Range(8.0f, -8.0f), Random.Range(8.0f, -8.0f)))).normalized;
+            Vector3 dir = -(this.transform.position - (player.transform.position + new Vector3(Random.Range(8.0f, -8.0f), 0.0f, Random.Range(8.0f, -8.0f)))).normalized;
             this.gameObject.GetComponent<Rigidbody>().AddForce(dir * speed, ForceMode.Impulse);
         }
         else 
