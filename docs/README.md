@@ -28,14 +28,16 @@ you can only carry a max of 4 of any resources at a time use them frequently.
 
 #### ---Credits---
 
-Programmers:
+##### Programmers:
+
 Henry Oliver
 
 Vaughan Webb
 
 Liam Liang
 
-Artists:
+##### Artists:
+
 Che Hong
 
 Aaron Huo
