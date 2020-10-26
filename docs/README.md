@@ -30,9 +30,12 @@ you can only carry a max of 4 of any resources at a time use them frequently.
 
 Programmers:
 Henry Oliver
+
 Vaughan Webb
+
 Liam Liang
 
 Artists:
 Che Hong
+
 Aaron Huo
